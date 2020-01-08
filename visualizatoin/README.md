@@ -1,22 +1,20 @@
+### Varible interpretation:
+
+* Countries: Colombia, Guatemala, El Salvador, Ecuador, Peru, Nicaragua, Mexico, Haiti, Honduras, Costa Rica, Venezuela.
+* Conflict type: Gov (ideological or political disputes), Ter (to purely territorial disputes), Gov/Ter (both), Int/grp.
+* HrFra: HrFra_1 = rhetorical provisions or mention of a human rights framework, HrFra_2 = substantive provisions concerning a human rights framework, HrFra_3 = detailed provisions for a human rights framework, indicating commitment.
+* Prot: Prot_1 = rhetorical provisions or mention of protection measures, Prot_2 = substantive provisions concerning the manner in which protection measures are im- plemented, Prot_3 = detailed provisions for the implementation of protection measures.
+* GCh: GCh_1 = there is only a mention of children, child rights, youth, young people, or similar; the pro- vision is purely rhetorical, GCh_2 = the agreement contains provisions that concern children, child rights, youth, young peo- ple, or similar, and the provision(s) give more detail on the mode of implementation and/or contain an anti-discrimination provision, GCh_3 = the provisions on children, child rights, youth, young people are present, substantive and substantial, giving detail and indicating commitment to implementation; the presence of rhe- torical statements does not preclude this score, as long as it is also accompanied by some substantive provisions and anti-discrimination provisions.
+* GDis: GDis_1 = issues of disability or injury are merely mentioned, the provision can be said to be rhetorical, without detail or substance, GDis_2 = the agreement contains provision(s) on disability or injury, and these are detailed or include a clear anti-discrimination clause, GDis_3 = the agreement deals with issues of disability or injury in a substantive and substan- tial way, providing details on implementation modalities; alternatively, the agreement makes both fairly detailed provisions and includes an anti-discrimination clause.
+* GInd: GInd_1 = indigenous peoples are merely mentioned, the provision can be said to be rhetori- cal, without detail or substance, GInd_2 = the agreement contains provision(s) on indigenous people; these provisions are detailed or include a clear anti-discrimination clause, GInd_3 = the agreement deals with issues related to indigenous people in a substantive and substantial way, providing details on implementation modalities; alternatively, the agreement makes both fairly detailed provisions and includes an anti-discrimination clause.
+* GMig: GMig_1 = issues related to migrants are merely mentioned, the provision can be said to be rhetorical, without detail or substance, GMig_2 = the agreement contains provision(s) on migrants; these provisions are detailed or include a clear anti-discrimination clause, GMig_3 = the agreement deals with issues related to migrants in a substantive and substan- tial way, providing details on implementation modalities; alternatively, the agreement makes both fairly detailed provisions and includes an anti-discrimination clause.
+* GSoc: GSoc_1 = social class or social origin are merely mentioned, the provision can be said to be rhetorical, without detail or substance, GSoc_2 = the agreement contains provision(s) on social class or social origin; these provisions are detailed or include a clear anti-discrimination clause GSoc_3 = the agreement deals with issues related to social class or social origin in a substan- tive and substantial way, providing details on implementation modalities; alterna- tively, the agreement makes both fairly detailed provisions and includes an anti-dis- crimination clause.
+* JusCr: Binary variable, takes the value of JusCr_1 if the peace agreement includes any provisions deal- ing with criminal justice such as review or reform of criminal justice; repeal or review of emergency law. If no such provisions appear in the agreement, the value on this variable is JusCr_0.
+
+This description is from [PACEX](https://www.peaceagreements.org/files/PA_X_codebook_Version2_June_2019.pdf).
+
 (This is a minimal update of my original [Sequences sunburst](http://bl.ocks.org/kerryrodden/7090426) block, to work correctly with d3 v4.)
 
 This example shows how it is possible to use a [D3 sunburst visualization](http://bl.ocks.org/mbostock/4063423) (partition layout) with data that describes sequences of events.
 
-A good use case is to summarize navigation paths through a web site, as in the sample synthetic data file (visit_sequences.csv). The visualization makes it easy to understand visits that start directly on a product page (e.g. after landing there from a search engine), compared to visits where users arrive on the site's home page and navigate from there. Where a funnel lets you understand a single pre-selected path, this allows you to see all possible paths.
-
-Features:
-
-* works with data that is in a CSV format (you don't need to pre-generate a hierarchical JSON file, unless your data file is very large)
-* interactive breadcrumb trail helps to emphasize the sequence, so that it is easy for a first-time user to understand what they are seeing
-* percentages are shown explicitly, to help overcome the distortion of the data that occurs when using a radial presentation
-
-If you want to simply reuse this with your own data, here are some tips for generating the CSV file:
-
-* no header is required (but it's OK if one is present)
-* use a hyphen to separate the steps in the sequence
-* the step names should be one word only, and ideally should be kept short. Non-alphanumeric characters will probably cause problems (I haven't tested this).
-* every sequence should have an "end" marker as the last element, *unless* it has been truncated because it is longer than the maximum sequence length (6, in the example). The purpose of the "end" marker is to distinguish a true end point (e.g. the user left the site) from an end point that has been forced by truncation.
-* each line should be a complete path from root to leaf - don't include counts for intermediate steps. For example, include "home-search-end" and "home-search-product-end" but not "home-search" - the latter is computed by the partition layout, by adding up the counts of all the sequences with that prefix.
-* to keep the number of permutations low, use a small number of unique step names, and a small maximum sequence length. Larger numbers of either of these will lead to a very large CSV that will be slow to process (and therefore require pre-processing into hierarchical JSON).
-
-I created this example in my work at Google, but it is not part of any Google product. It is covered by the Apache license (see the LICENSE file).
+I created this example in my homewor at UOC, but it is not part of any UOC product. It is covered by the Apache license (see the LICENSE file).
